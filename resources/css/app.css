@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-slate-50 font-sans text-slate-900 antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply font-display tracking-tight text-slate-950;
+    }
+
+    ::selection {
+        @apply bg-brand-100 text-brand-700;
+    }
+}
+
+@layer components {
+    .shell {
+        @apply mx-auto w-full max-w-7xl px-6 lg:px-8;
+    }
+
+    .eyebrow {
+        @apply inline-flex items-center rounded-full border border-brand-100 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-brand-600;
+    }
+
+    .section-title {
+        @apply font-display text-3xl leading-tight text-slate-950 sm:text-4xl lg:text-5xl;
+    }
+
+    .section-copy {
+        @apply max-w-2xl text-base leading-8 text-slate-600;
+    }
+
+    .glass-card {
+        @apply rounded-[28px] border border-white/70 bg-white/90 shadow-soft backdrop-blur;
+    }
+
+    .admin-card {
+        @apply rounded-none border-[4px] border-black bg-white shadow-[8px_8px_0_#0033a0] flex flex-col;
+    }
+
+    .btn-primary {
+        @apply inline-flex items-center justify-center border-[3px] border-transparent bg-[#0033a0] px-6 py-3 text-xs md:text-sm font-extrabold uppercase tracking-widest text-white shadow-[4px_4px_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-none hover:bg-black transition-all cursor-pointer;
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center justify-center border-[3px] border-black bg-white px-6 py-3 text-xs md:text-sm font-extrabold uppercase tracking-widest text-black shadow-[4px_4px_0_#0033a0] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all hover:bg-gray-100 cursor-pointer;
+    }
+
+    .field-input {
+        @apply w-full border-[3px] border-black bg-gray-50 px-4 py-3 text-sm font-bold text-black focus:border-[#0033a0] focus:ring-0 focus:shadow-[4px_4px_0_#0033a0] transition-all;
+    }
+
+    .form-label {
+        @apply block text-sm font-extrabold uppercase tracking-widest text-black mb-2;
+    }
+    
+    /* Table Resets for Dashboard Brutalism */
+    th {
+        @apply border-b-[4px] border-black px-6 py-4 text-xs font-extrabold uppercase tracking-widest text-black bg-gray-100 text-left;
+    }
+    td {
+        @apply border-b-2 border-gray-200 px-6 py-4 text-sm font-bold text-black align-middle;
+    }
+    tbody tr:hover td {
+        @apply border-black bg-blue-50/20 transition-colors;
+    }
+
+    .lift-card {
+        @apply transition duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_28px_90px_-28px_rgba(37,99,235,0.28)];
+    }
+
+    .soft-panel {
+        @apply rounded-[32px] border border-slate-200/80 bg-white shadow-soft;
+    }
+
+    .metric-chip {
+        @apply inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm;
+    }
+
+    .gradient-border {
+        @apply rounded-[32px] bg-gradient-to-br from-brand-100 via-white to-slate-100 p-[1px];
+    }
+
+    .editorial-card {
+        @apply rounded-[32px] border border-slate-200/80 bg-white shadow-soft;
+    }
+
+    .blue-panel {
+        @apply rounded-[36px] bg-[linear-gradient(135deg,#2563eb_0%,#1d4ed8_58%,#0f172a_100%)] text-white shadow-[0_28px_90px_-30px_rgba(37,99,235,0.55)];
+    }
+
+    .image-tile {
+        @apply overflow-hidden rounded-[28px] border border-slate-200/80 bg-white shadow-soft;
+    }
+}
+
+@layer utilities {
+    .reveal-up {
+        animation: reveal-up 0.8s ease-out both;
+    }
+
+    .reveal-delay-1 {
+        animation-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+        animation-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+        animation-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+        animation-delay: 0.4s;
+    }
+}
+
+@keyframes reveal-up {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
