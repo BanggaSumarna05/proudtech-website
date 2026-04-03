@@ -7,12 +7,15 @@
             <div>
                 <span class="inline-block bg-black text-white px-4 py-1.5 text-xs font-bold uppercase tracking-widest mb-6 shadow-[4px_4px_0_#0033a0]">Proude Tech Core</span>
                 <h1 class="text-5xl lg:text-7xl font-extrabold uppercase tracking-tighter leading-none text-black">
-                    AGENCY<br><span class="theme-text">BEYOND</span><br>TEMPLATES.
+                  BEYOND  <br><span class="theme-text"> TEMPLATES.</span><br>BUILDING REAL SYSTEMS.
+
+
+
                 </h1>
             </div>
             <div class="space-y-6 text-lg leading-relaxed text-gray-700 font-bold flex flex-col justify-center border-l-[4px] border-black pl-6">
-                <p>Proude Tech menggabungkan strategi terstruktur, rancangan UI kokoh, dan eksekusi infrastruktur berbasis Laravel tingkat tinggi untuk membantu perusahaan mencetak validasi di ekosistem digital secara presisi.</p>
-                <p class="text-gray-500 text-base">Kami bermitra dengan bisnis yang menuntut standar operasional tinggi: jalur konversi yang pasti, flow internal yang rapi, database yang absolut, dan maintenance server jangka panjang yang minim down-time.</p>
+                <p>Proude Tech membantu bisnis membangun website dan sistem digital yang terstruktur, stabil, dan siap digunakan dalam operasional nyata.</p>
+                <p class="text-gray-500 text-base">Kami fokus pada hasil: <Br>alur kerja yang rapi, <Br>sistem yang mudah dikelola, <Br>dan performa yang bisa diandalkan untuk jangka panjang.</p>
             </div>
         </div>
     </section>
@@ -22,11 +25,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-8 md:grid-cols-3">
             <div class="bg-white border-[4px] border-black p-8 shadow-[8px_8px_0_#0033a0] hover:-translate-y-2 transition-transform">
                 <p class="text-sm font-extrabold uppercase tracking-widest theme-text mb-6 border-b-[4px] theme-border pb-3 w-1/3">VISI</p>
-                <h2 class="text-xl font-extrabold uppercase tracking-tight text-black leading-snug">Menjadikan konstruksi digital *enterprise* dapat diakses sempurna melalui arsitektur software agnostik.</h2>
+                <h2 class="text-xl font-extrabold uppercase tracking-tight text-black leading-snug">Membantu bisnis berkembang melalui solusi digital yang stabil, scalable, dan berorientasi hasil.</h2>
             </div>
             <div class="bg-white border-[4px] border-black p-8 shadow-[8px_8px_0_#000] hover:-translate-y-2 transition-transform">
                 <p class="text-sm font-extrabold uppercase tracking-widest text-black mb-6 border-b-[4px] border-black pb-3 w-1/3">MISI</p>
-                <h2 class="text-xl font-extrabold uppercase tracking-tight text-black leading-snug">Menerjemahkan objektif bisnis ke dalam algoritma dan UI untuk menghasilkan momentum pertumbuhan tak terbatas.</h2>
+                <h2 class="text-xl font-extrabold uppercase tracking-tight text-black leading-snug">Menerjemahkan kebutuhan bisnis menjadi sistem digital yang efektif dan mudah digunakan.</h2>
             </div>
             <div class="bg-black text-white border-[4px] border-black p-8 shadow-[8px_8px_0_#0033a0] hover:-translate-y-2 transition-transform">
                 <p class="text-sm font-extrabold uppercase tracking-widest theme-text mb-6 border-b-[4px] theme-border pb-3 w-1/3 text-white">POSITION.</p>

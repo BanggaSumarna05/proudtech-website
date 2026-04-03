@@ -1,8 +1,8 @@
 @props([
     'title' => 'NO ROOM FOR',
     'highlight' => '.COMPROMISE',
-    'description' => 'Infrastruktur digital Anda memerlukan ekskusi tingkat lanjut. Hubungi arsitek sistem teknis kami hari ini.',
-    'buttonText' => 'Jadwal Konsultasi',
+    'description' => 'Siap Meningkatkan Bisnis Anda? Konsultasikan kebutuhan Anda sekarang dan dapatkan solusi digital yang tepat untuk bisnis Anda.',
+    'buttonText' => 'Konsultasi Gratis',
     'buttonLink' => null,
 ])
 

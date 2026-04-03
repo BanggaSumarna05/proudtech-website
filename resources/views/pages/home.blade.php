@@ -9,7 +9,7 @@
                 'image' => asset('images/img_Proudtech/Banner Home.jpg'),
             ],
         ];
-        $stackItems = ['Laravel 11', 'Tailwind CSS', 'Microservices', 'Enterprise Architecture'];
+        $stackItems = ['✔ Website lebih cepat & stabil  ', '✔ Sistem lebih efisien', '✔ Operasional bisnis lebih terkontrol'];
     @endphp
 
     <!-- HERO SECTION: Compact Rhythm -->
@@ -20,14 +20,15 @@
                     Elevating Digital Standards
                 </div>
                 <h1 class="font-extrabold text-5xl sm:text-6xl lg:text-7xl leading-tight text-black mb-6 tracking-tighter uppercase">
-                    BUILDING <br><span class="theme-text">SMART</span> <br>FUTURE.
+                    Bangun Website <br><span class="theme-text">& Sistem Digital</span> 
+                    <br>yang Meningkatkan Bisnis Anda.
                 </h1>
                 <p class="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed font-semibold">
-                    Kami mendesain, membangun, dan menyempurnakan eksosistem digital kompleks untuk mengakselerasi bisnis Anda.
-                </p>
+                    Dari company profile hingga sistem custom kami bantu Anda terlihat profesional & meningkatkan konversi.
+                     </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="{{ route('consultation.create') }}" class="theme-bg text-white px-8 py-4 font-bold text-sm uppercase tracking-widest text-center hover:bg-black transition-colors border-2 border-transparent hover:border-black">MULAI TRANSFORMASI</a>
-                    <a href="#services" class="bg-white text-black border-2 border-black px-8 py-4 font-bold text-sm uppercase tracking-widest text-center hover:bg-black hover:text-white transition-colors">EKSPLORASI SISTEM</a>
+                    <a href="{{ route('consultation.create') }}" class="theme-bg text-white px-8 py-4 font-bold text-sm uppercase tracking-widest text-center hover:bg-black transition-colors border-2 border-transparent hover:border-black">Konsultasi Gratis</a>
+                    <a href="#services" class="bg-white text-black border-2 border-black px-8 py-4 font-bold text-sm uppercase tracking-widest text-center hover:bg-black hover:text-white transition-colors">Lihat Portfolio</a>
                 </div>
             </div>
             
@@ -51,18 +52,8 @@
         <div class="flex whitespace-nowrap min-w-max animate-infinite-scroll items-center">
             @for ($i = 0; $i < 3; $i++)
                 <div class="flex items-center justify-around gap-12 px-6">
-                    <span class="text-xl lg:text-2xl font-extrabold uppercase tracking-widest text-white">#LARAVEL 11</span>
-                    <span class="text-xl lg:text-2xl font-extrabold text-blue-600">///</span>
-                    <span class="text-xl lg:text-2xl font-extrabold uppercase tracking-widest text-white">AWS ARCHITECTURE</span>
-                    <span class="text-xl lg:text-2xl font-extrabold text-blue-600">///</span>
-                    <span class="text-xl lg:text-2xl font-extrabold uppercase tracking-widest text-white">TAILWIND CSS</span>
-                    <span class="text-xl lg:text-2xl font-extrabold text-blue-600">///</span>
-                    <span class="text-xl lg:text-2xl font-extrabold uppercase tracking-widest text-white">DOCKER ENGINE</span>
-                    <span class="text-xl lg:text-2xl font-extrabold text-blue-600">///</span>
-                    <span class="text-xl lg:text-2xl font-extrabold uppercase tracking-widest text-white">ENTERPRISE SCALE</span>
-                    <span class="text-xl lg:text-2xl font-extrabold text-blue-600">///</span>
-                    <span class="text-xl lg:text-2xl font-extrabold uppercase tracking-widest text-white">SEAMLESS UX</span>
-                    <span class="text-xl lg:text-2xl font-extrabold text-blue-600">///</span>
+                    <span class="text-xl lg:text-2xl font-extrabold uppercase tracking-widest text-white">Dibangun dengan Teknologi Modern untuk Website yang Cepat, Aman, dan Siap Scale</span>
+                    <span class="text-xl lg:text-2xl font-extrabold text-blue-600">///</span>       
                 </div>
             @endfor
         </div>
@@ -86,7 +77,9 @@
                     <x-ui.section-heading 
                         eyebrow="Filosofi Teknologi" 
                         title="Lebih dari sekadar kode."
-                        description="Kami membangun arsitektur yang siap menahan lonjakan beban bisnis. Proude Tech menjamin infrastruktur digital cerdas yang mengakselerasi pertumbuhan."
+                        description="Kami tidak hanya membangun sistem,
+kami menciptakan solusi digital yang membantu bisnis Anda berkembang,
+lebih efisien, dan siap bersaing di era digital."
                         dark="true"
                     />
                     <div class="flex flex-wrap gap-3 mt-6">
@@ -107,7 +100,7 @@
             <div class="flex flex-col lg:flex-row justify-between items-end mb-12 pb-6 border-b-[3px] border-black">
                 <div class="max-w-3xl">
                     <x-ui.section-heading 
-                        eyebrow="Layanan Inti" 
+                        eyebrow="Layanan " 
                         title="Solusi Digital Komprehensif"
                     />
                 </div>
@@ -165,7 +158,7 @@
             <!-- Stats -->
             <div class="bg-black text-white p-10 lg:p-14 flex flex-col justify-center">
                 <div class="mb-10">
-                    <h2 class="text-3xl lg:text-4xl font-extrabold uppercase tracking-tighter mb-4">KINERJA <span class="theme-text">.SOLID</span></h2>
+                    <h2 class="theme-text text-3xl lg:text-4xl font-extrabold uppercase tracking-tighter mb-4">Beberapa Proyek yang <span class="theme-text">Telah Kami Kerjakan</span></h2>
                     <p class="text-gray-400 text-sm font-semibold leading-relaxed max-w-sm">Kami mengukur keberhasilan murni dari data operasional dan tingkat efisiensi.</p>
                 </div>
 
@@ -179,10 +172,13 @@
             <!-- Case Study Feature -->
             <div class="bg-white border-l-0 lg:border-l-[8px] border-black flex flex-col">
                 <div class="p-10 lg:p-14 flex-grow flex flex-col justify-center">
-                    <span class="inline-block bg-black text-white px-3 py-1 text-xs font-bold uppercase tracking-widest mb-6 self-start">STUDI KASUS</span>
-                    <h3 class="text-3xl font-extrabold uppercase tracking-tight mb-5 text-black">Efisiensi Sistem Terpusat</h3>
+                    <span class="inline-block bg-black text-white px-3 py-1 text-xs font-bold uppercase tracking-widest mb-6 self-start">Contoh Project</span>
+                    <h3 class="text-3xl font-extrabold uppercase tracking-tight mb-5 text-black">Sistem Rental Mobil</h3>
                     <p class="text-gray-600 mb-8 leading-relaxed font-semibold text-base max-w-lg">
-                        Infrastruktur canggih yang terbukti mengurangi redundansi proses hingga 40%. Arsitektur yang kami bangun stabil dan highly scalable.
+                        ✔ Booking online otomatis <br>
+                        ✔ Pembayaran terintegrasi <br>
+                        ✔ Dashboard admin real-time <br>
+                        ✔ Mengurangi proses manual hingga 70%
                     </p>
                     <a href="{{ route('portfolio.index') }}" class="theme-bg text-white px-8 py-4 font-bold text-sm uppercase tracking-widest self-start border-2 border-transparent hover:bg-black transition-colors shadow-[4px_4px_0_#000]">Analisa Portofolio</a>
                 </div>

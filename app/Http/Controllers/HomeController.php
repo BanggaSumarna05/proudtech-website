@@ -20,22 +20,22 @@ class HomeController extends Controller
             'stats' => [
                 [
                     'value' => number_format(Portfolio::query()->count()),
-                    'label' => 'Studi kasus pilihan',
+                    'label' => 'Project pilihan',
                 ],
                 [
                     'value' => number_format(Service::query()->count()),
-                    'label' => 'Lini layanan utama',
+                    'label' => 'Layanan utama',
                 ],
                 [
                     'value' => $totalLeads > 0 ? round(($dealLeads / $totalLeads) * 100) . '%' : '0%',
-                    'label' => 'Konversi lead saat ini',
+                    'label' => 'Kerjasama Yang sukses',
                 ],
             ],
             'process' => [
-                'Memahami masalah bisnis dan merapikan value proposition.',
-                'Merancang experience yang fokus pada konversi dan kepercayaan.',
-                'Membangun produk dengan alur operasional berbasis Laravel.',
-                'Meluncurkan, mengukur, lalu mengembangkan bersama tim Anda.',
+                'Memahami bisnis & masalah utama Anda.',
+                'Merancang solusi yang fokus pada konversi & kepercayaan.',
+                'Membangun sistem yang stabil, cepat, dan scalable.',
+                'Meluncurkan, mengukur, dan mengembangkan bersama Anda.',
             ],
         ]);
     }

@@ -121,7 +121,7 @@
                                 <span class="font-extrabold text-2xl tracking-tighter text-white">PROUDE<span class="theme-text">TECH</span></span>
                             </div>
                             <p class="text-gray-400 text-sm leading-relaxed mb-6 font-medium">
-                                Membangun solusi enterprise, ekosistem digital, dan aplikasi performa tinggi untuk bisnis visioner.
+                                Butuh website atau sistem untuk bisnis Anda? Tim kami siap membantu.
                             </p>
                         </div>
 
