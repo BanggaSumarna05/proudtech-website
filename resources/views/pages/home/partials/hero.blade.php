@@ -4,7 +4,7 @@
             <div class="inline-block bg-black text-white px-4 py-1.5 text-xs font-bold uppercase tracking-widest mb-6 shadow-[4px_4px_0_#0033a0]">
                 Elevating Digital Standards
             </div>
-            <h1 class="font-extrabold text-5xl sm:text-6xl lg:text-7xl leading-tight text-black mb-6 tracking-tighter uppercase">
+            <h1 class="font-extrabold text-4xl sm:text-6xl lg:text-7xl leading-tight text-black mb-6 tracking-tighter uppercase">
                 Bangun Website <br><span class="theme-text">&amp; Sistem Digital</span>
                 <br>yang Meningkatkan Bisnis Anda.
             </h1>
@@ -19,7 +19,7 @@
 
         <div class="relative">
             <div class="absolute -inset-4 border-[6px] theme-border translate-x-4 -translate-y-4 z-0 hidden lg:block"></div>
-            <div class="relative z-10 w-full aspect-square sm:aspect-video lg:aspect-square max-h-[460px] bg-gray-100 overflow-hidden border-4 border-black">
+            <div class="relative z-10 w-full aspect-square sm:aspect-video lg:aspect-square max-h-[320px] sm:max-h-[460px] bg-gray-100 overflow-hidden border-4 border-black">
                 <x-ui.responsive-image
                     :src="asset('images/optimized/banner-home-1024.webp')"
                     :webp="asset('images/optimized/banner-home-1024.webp')"
@@ -34,7 +34,7 @@
                     fetchpriority="high"
                     class="w-full h-full object-cover"
                 />
-                <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+                <div class="absolute inset-x-0 bottom-0 hidden h-32 bg-gradient-to-t from-black/20 to-transparent pointer-events-none sm:block"></div>
                 <div class="absolute bottom-0 right-0 bg-black p-6 border-l-[4px] theme-border max-w-xs hidden sm:block">
                     <p class="text-xs font-bold uppercase tracking-widest text-white mb-2">Solusi Profesional</p>
                     <p class="text-xs font-medium text-gray-400">Infrastruktur canggih yang membangun kredibilitas bisnis.</p>

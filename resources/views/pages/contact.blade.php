@@ -1,5 +1,9 @@
 @extends('layouts.public')
 
+@push('scripts')
+    @vite('resources/js/public.js')
+@endpush
+
 @section('content')
     @php
         $waNumber = preg_replace('/\D+/', '', (string) $siteSettings->whatsapp_number);

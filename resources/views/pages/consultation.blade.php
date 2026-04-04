@@ -1,5 +1,9 @@
 @extends('layouts.public')
 
+@push('scripts')
+    @vite('resources/js/public.js')
+@endpush
+
 @section('content')
     <section class="bg-gray-50 py-20 lg:py-24 min-h-screen border-b-[8px] theme-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-12 lg:gap-16 lg:grid-cols-[0.9fr,1.1fr] w-full items-start">

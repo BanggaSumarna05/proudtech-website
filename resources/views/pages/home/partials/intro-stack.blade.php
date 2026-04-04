@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div class="grid grid-cols-2 gap-6 relative">
-                <div class="aspect-square bg-gray-900 border-4 border-white overflow-hidden shadow-[0_18px_40px_rgba(0,0,0,0.28)]">
+                <div class="col-span-2 sm:col-span-1 aspect-square bg-gray-900 border-4 border-white overflow-hidden shadow-[0_18px_40px_rgba(0,0,0,0.28)]">
                     <x-ui.responsive-image
                         :src="asset('images/optimized/founder-650.webp')"
                         :webp="asset('images/optimized/founder-650.webp')"
@@ -16,7 +16,7 @@
                         class="w-full h-full object-cover"
                     />
                 </div>
-                <div class="aspect-square bg-gray-900 border-4 border-white overflow-hidden shadow-[0_18px_40px_rgba(0,0,0,0.28)] lg:translate-y-6">
+                <div class="hidden sm:block aspect-square bg-gray-900 border-4 border-white overflow-hidden shadow-[0_18px_40px_rgba(0,0,0,0.28)] lg:translate-y-6">
                     <x-ui.responsive-image
                         :src="asset('images/optimized/service-650.webp')"
                         :webp="asset('images/optimized/service-650.webp')"

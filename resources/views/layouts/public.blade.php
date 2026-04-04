@@ -27,14 +27,10 @@
             >
         @endif
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-
         @stack('head')
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/css/app.css'])
         <style>
-            body { font-family: 'Plus Jakarta Sans', sans-serif; }
+            body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
             .theme-bg { background-color: #0033a0; }
             .theme-text { color: #0033a0; }
             .theme-border { border-color: #0033a0; }
@@ -62,11 +58,11 @@
             ];
         @endphp
 
-        <div x-data="{ menuOpen: false }" class="min-h-screen flex flex-col">
+        <div class="min-h-screen flex flex-col">
             <header role="banner" class="sticky top-0 z-50 border-b-2 border-gray-200 bg-white/95">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 sm:h-20">
                     <a href="{{ route('home') }}" class="flex items-center gap-3">
-                        <img src="{{ asset('images/img_Proudtech/Logo Proud Tech.png') }}" alt="Proude Tech Logo" width="1215" height="1215" class="h-10 w-auto object-contain" decoding="async">
+                        <img src="{{ asset('images/optimized/logo-proudtech-160.webp') }}" alt="Proude Tech Logo" width="160" height="160" class="h-9 w-9 sm:h-10 sm:w-10 object-contain" decoding="async">
                         <span class="font-extrabold text-2xl tracking-tighter text-black">PROUDE<span class="theme-text">TECH</span></span>
                     </a>
 
@@ -83,14 +79,14 @@
                         <a href="{{ $waLink }}" class="theme-bg text-white px-6 py-2.5 text-sm font-bold uppercase tracking-widest hover:bg-slate-950 transition-colors border-2 border-transparent hover:border-black">Mulai Proyek</a>
                     </div>
 
-                    <button type="button" class="lg:hidden text-gray-900 p-2" @click="menuOpen = !menuOpen">
+                    <button type="button" class="lg:hidden text-gray-900 p-2" data-menu-toggle aria-expanded="false" aria-controls="mobile-nav">
                         <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
                 </div>
 
-                <div x-show="menuOpen" x-transition class="border-t-2 border-black bg-white lg:hidden">
+                <div id="mobile-nav" class="hidden border-t-2 border-black bg-white lg:hidden">
                     <div class="px-4 py-5 space-y-4">
                         @foreach ($publicNav as $item)
                             <a href="{{ route($item['route']) }}" class="block text-sm font-bold uppercase text-gray-900 tracking-widest">
@@ -121,12 +117,12 @@
                 </a>
             </div>
 
-            <footer class="bg-slate-950 text-white py-12 lg:py-16 border-t-[8px] theme-border mt-auto">
+            <footer class="bg-slate-950 text-white py-12 lg:py-16 border-t-[8px] theme-border mt-auto content-auto">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                         <div class="lg:col-span-1">
                             <div class="flex items-center gap-3 mb-6">
-                                <img src="{{ asset('images/img_Proudtech/Logo Proud Tech.png') }}" width="1215" height="1215" class="h-10 filter brightness-0 invert" alt="Proude Tech" decoding="async">
+                                <img src="{{ asset('images/optimized/logo-proudtech-160.webp') }}" width="160" height="160" class="h-10 w-10 filter brightness-0 invert" alt="Proude Tech" decoding="async">
                                 <span class="font-extrabold text-2xl tracking-tighter text-white">PROUDE<span class="theme-text">TECH</span></span>
                             </div>
                             <p class="text-gray-400 text-sm leading-relaxed mb-6 font-medium">
@@ -174,5 +170,22 @@
         </div>
 
         @stack('scripts')
+        <script>
+            (() => {
+                const toggle = document.querySelector('[data-menu-toggle]');
+                const menu = document.getElementById('mobile-nav');
+
+                if (!toggle || !menu) {
+                    return;
+                }
+
+                toggle.addEventListener('click', () => {
+                    const isOpen = !menu.classList.contains('hidden');
+
+                    menu.classList.toggle('hidden', isOpen);
+                    toggle.setAttribute('aria-expanded', String(!isOpen));
+                });
+            })();
+        </script>
     </body>
 </html>
