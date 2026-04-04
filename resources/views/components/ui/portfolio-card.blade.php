@@ -1,9 +1,18 @@
 @props(['portfolio'])
 
-<article data-aos="fade-up" class="bg-white border-[4px] border-black overflow-hidden flex flex-col hover:-translate-y-2 hover:shadow-[12px_12px_0_#0033a0] transition-all duration-300 group h-full">
+<article class="bg-white border-[4px] border-black overflow-hidden flex flex-col transform-gpu hover:-translate-y-1 hover:shadow-[8px_8px_0_#0033a0] transition-surface group h-full min-h-[420px]">
     <div class="relative w-full aspect-video border-b-[4px] border-black overflow-hidden bg-gray-900">
-        <img src="{{ $portfolio->image_url }}" alt="{{ $portfolio->title }}" class="absolute inset-0 w-full h-full object-cover grayscale mix-blend-luminosity group-hover:grayscale-0 group-hover:mix-blend-normal transition-all duration-700 scale-105 group-hover:scale-100">
-        <div class="absolute inset-0 bg-[url('https://laravel.com/assets/img/welcome/background.svg')] opacity-30 mix-blend-multiply pointer-events-none"></div>
+        <x-ui.responsive-image
+            :src="$portfolio->image_url"
+            :webp="$portfolio->image_webp_url"
+            :avif="$portfolio->image_avif_url"
+            :alt="$portfolio->title"
+            :width="$portfolio->image_width"
+            :height="$portfolio->image_height"
+            sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+            loading="lazy"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+        />
     </div>
     <div class="p-8 flex flex-col flex-grow">
         <h3 class="text-xl font-extrabold uppercase tracking-tight text-black mb-4 leading-snug">{{ $portfolio->title }}</h3>

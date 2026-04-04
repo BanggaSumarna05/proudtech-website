@@ -32,29 +32,34 @@
                     <h2 class="text-2xl font-extrabold uppercase tracking-tight text-black mb-2">FORMULIR IDENTIFIKASI</h2>
                     <p class="text-xs font-bold uppercase tracking-widest text-gray-500">INPUT DATA SISTEM YANG BERLAKU.</p>
                 </div>
-                <form method="POST" action="{{ route('contact.store') }}" class="space-y-6 text-black font-semibold">
+                <form method="POST" action="{{ route('contact.store') }}" class="space-y-6 text-black font-semibold" data-async-form>
                     @csrf
+                    <div class="async-form-status" data-form-status role="status" aria-live="polite"></div>
                     <div>
                         <label for="name" class="block text-xs font-bold uppercase tracking-widest mb-2">Identitas Relasi</label>
-                        <input id="name" name="name" value="{{ old('name') }}" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none placeholder-gray-300 shadow-[4px_4px_0_#000] focus:shadow-[4px_4px_0_#0033a0]" required placeholder="NAMA LENGKAP">
+                        <input id="name" name="name" value="{{ old('name') }}" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none placeholder-gray-300 shadow-[4px_4px_0_#000] focus:shadow-[4px_4px_0_#0033a0]" required maxlength="255" autocomplete="name" placeholder="NAMA LENGKAP">
                         <x-input-error :messages="$errors->get('name')" class="mt-2 text-red-600 text-xs font-bold uppercase" />
+                        <p class="mt-2 hidden text-red-600 text-xs font-bold uppercase" data-field-error="name"></p>
                     </div>
                     <div>
                         <label for="email" class="block text-xs font-bold uppercase tracking-widest mb-2">Endpoint Surel</label>
-                        <input id="email" type="email" name="email" value="{{ old('email') }}" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none placeholder-gray-300 shadow-[4px_4px_0_#000] focus:shadow-[4px_4px_0_#0033a0]" required placeholder="EMAIL@SERVERANDA.COM">
+                        <input id="email" type="email" name="email" value="{{ old('email') }}" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none placeholder-gray-300 shadow-[4px_4px_0_#000] focus:shadow-[4px_4px_0_#0033a0]" required maxlength="255" autocomplete="email" placeholder="EMAIL@SERVERANDA.COM">
                         <x-input-error :messages="$errors->get('email')" class="mt-2 text-red-600 text-xs font-bold uppercase" />
+                        <p class="mt-2 hidden text-red-600 text-xs font-bold uppercase" data-field-error="email"></p>
                     </div>
                     <div>
                         <label for="phone" class="block text-xs font-bold uppercase tracking-widest mb-2">Line Telepon (Opsional)</label>
-                        <input id="phone" name="phone" value="{{ old('phone') }}" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none placeholder-gray-300 shadow-[4px_4px_0_#000] focus:shadow-[4px_4px_0_#0033a0]" placeholder="+62 8XX XXXX XXXX">
+                        <input id="phone" name="phone" value="{{ old('phone') }}" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none placeholder-gray-300 shadow-[4px_4px_0_#000] focus:shadow-[4px_4px_0_#0033a0]" maxlength="50" autocomplete="tel" placeholder="+62 8XX XXXX XXXX">
                         <x-input-error :messages="$errors->get('phone')" class="mt-2 text-red-600 text-xs font-bold uppercase" />
+                        <p class="mt-2 hidden text-red-600 text-xs font-bold uppercase" data-field-error="phone"></p>
                     </div>
                     <div>
                         <label for="message" class="block text-xs font-bold uppercase tracking-widest mb-2">Detail Log / Pesan</label>
-                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none placeholder-gray-300 font-bold shadow-[4px_4px_0_#000] focus:shadow-[4px_4px_0_#0033a0]" required placeholder="JABARKAN RENCANA DIGITAL / MASALAHNYA...">{{ old('message') }}</textarea>
+                        <textarea id="message" name="message" rows="5" minlength="20" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none placeholder-gray-300 font-bold shadow-[4px_4px_0_#000] focus:shadow-[4px_4px_0_#0033a0]" required placeholder="JABARKAN RENCANA DIGITAL / MASALAHNYA...">{{ old('message') }}</textarea>
                         <x-input-error :messages="$errors->get('message')" class="mt-2 text-red-600 text-xs font-bold uppercase" />
+                        <p class="mt-2 hidden text-red-600 text-xs font-bold uppercase" data-field-error="message"></p>
                     </div>
-                    <button type="submit" class="w-full bg-black text-white py-5 font-extrabold text-base uppercase tracking-widest hover:theme-bg hover:shadow-[8px_8px_0_#000] transition-all border-[4px] border-transparent hover:-translate-y-1">
+                    <button type="submit" data-idle-label="TRANSMIT DATA" data-loading-label="MENGIRIM..." class="w-full bg-black text-white py-5 font-extrabold text-base uppercase tracking-widest hover:theme-bg hover:shadow-[8px_8px_0_#000] transition-all border-[4px] border-transparent hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed">
                         TRANSMIT DATA
                     </button>
                 </form>

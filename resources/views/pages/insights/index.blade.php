@@ -8,12 +8,21 @@
             description="Analisis mendalam, studi kasus teknologi seluler, dan wawasan arsitektur berskala enterprise untuk Anda."
         />
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 content-auto">
             @forelse($insights as $insight)
-                <article data-aos="fade-up" class="bg-white border-[4px] border-black flex flex-col group hover:-translate-y-2 hover:shadow-[12px_12px_0_#0033a0] transition-all h-full">
+                <article class="bg-white border-[4px] border-black flex flex-col group hover:-translate-y-1 hover:shadow-[8px_8px_0_#0033a0] transition-surface transform-gpu h-full min-h-[420px]">
                     <a href="{{ route('insights.show', $insight->slug) }}" class="flex-grow flex flex-col">
                         <div class="w-full aspect-video bg-gray-100 overflow-hidden border-b-4 border-black relative">
-                            <img src="{{ $insight->image_url }}" alt="{{ $insight->title }}" class="w-full h-full object-cover grayscale mix-blend-luminosity group-hover:grayscale-0 group-hover:mix-blend-normal transition-all duration-700">
+                            <x-ui.responsive-image
+                                :src="$insight->image_url"
+                                :webp="$insight->image_webp_url"
+                                :avif="$insight->image_avif_url"
+                                :alt="$insight->title"
+                                :width="$insight->image_width"
+                                :height="$insight->image_height"
+                                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                            />
                         </div>
                         <div class="p-6 lg:p-8 flex-grow flex flex-col justify-between">
                             <div>

@@ -12,6 +12,12 @@
         $stackItems = ['✔ Website lebih cepat & stabil  ', '✔ Sistem lebih efisien', '✔ Operasional bisnis lebih terkontrol'];
     @endphp
 
+    @include('pages.home.partials.hero')
+    @include('pages.home.partials.trust-marquee')
+    @include('pages.home.partials.intro-stack', ['stackItems' => ['✔ Website lebih cepat dan stabil', '✔ Sistem lebih efisien', '✔ Operasional bisnis lebih terkontrol']])
+
+    @if (false)
+
     <!-- HERO SECTION: Compact Rhythm -->
     <section class="relative bg-white pt-8 pb-20 overflow-hidden border-b-[6px] theme-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 lg:grid lg:grid-cols-[1.25fr,0.75fr] lg:gap-16 items-center">
@@ -94,8 +100,10 @@ lebih efisien, dan siap bersaing di era digital."
         </div>
     </section>
 
+    @endif
+
     <!-- SERVICES -->
-    <section id="services" class="py-20 bg-gray-50 border-b-[6px] border-black">
+    <section id="services" class="py-20 bg-gray-50 border-b-[6px] border-black content-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row justify-between items-end mb-12 pb-6 border-b-[3px] border-black">
                 <div class="max-w-3xl">
@@ -118,6 +126,11 @@ lebih efisien, dan siap bersaing di era digital."
             </div>
         </div>
     </section>
+
+    @include('pages.home.partials.process-section', ['process' => $process])
+    @include('pages.home.partials.stats-showcase', ['stats' => $stats])
+
+    @if (false)
 
     <!-- PROCESS & METHODOLOGY -->
     <section class="py-20 bg-white border-b-[6px] border-black">
@@ -189,6 +202,8 @@ lebih efisien, dan siap bersaing di era digital."
             </div>
         </div>
     </section>
+
+    @endif
 
     <!-- BOTTOM CTA -->
     <x-ui.cta-banner />

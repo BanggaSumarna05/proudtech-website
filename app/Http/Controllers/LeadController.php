@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LeadRequest;
 use App\Http\Requests\LeadStatusRequest;
 use App\Models\Lead;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
@@ -15,12 +16,18 @@ class LeadController extends Controller
         return view('pages.consultation');
     }
 
-    public function store(LeadRequest $request): RedirectResponse
+    public function store(LeadRequest $request): JsonResponse|RedirectResponse
     {
         Lead::query()->create([
             ...$request->validated(),
             'status' => 'new',
         ]);
+
+        if ($request->expectsJson()) {
+            return response()
+                ->json(['message' => 'Permintaan konsultasi berhasil dikirim. Kami akan segera menghubungi Anda.'])
+                ->setStatusCode(201);
+        }
 
         return redirect()
             ->route('consultation.create')

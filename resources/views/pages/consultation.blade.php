@@ -24,26 +24,31 @@
                 <div class="mb-8 text-center md:text-left">
                     <h2 class="text-2xl font-extrabold uppercase tracking-tight text-black mb-2">REGISTER KONSULTASI</h2>
                 </div>
-                <form method="POST" action="{{ route('consultation.store') }}" class="space-y-6 text-black font-semibold">
+                <form method="POST" action="{{ route('consultation.store') }}" class="space-y-6 text-black font-semibold" data-async-form>
                     @csrf
+                    <div class="async-form-status" data-form-status role="status" aria-live="polite"></div>
                     <div class="grid gap-6 md:grid-cols-2">
                         <div>
                             <label for="name" class="block text-xs font-extrabold uppercase tracking-widest mb-2">PIC Auth</label>
-                            <input id="name" name="name" value="{{ old('name') }}" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none placeholder-gray-300 shadow-[4px_4px_0_#000]" required placeholder="NAMA LENGKAP">
+                            <input id="name" name="name" value="{{ old('name') }}" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none placeholder-gray-300 shadow-[4px_4px_0_#000]" required maxlength="255" autocomplete="name" placeholder="NAMA LENGKAP">
+                            <p class="mt-2 hidden text-red-600 text-xs font-bold uppercase" data-field-error="name"></p>
                         </div>
                         <div>
                             <label for="email" class="block text-xs font-extrabold uppercase tracking-widest mb-2">Routing Surel</label>
-                            <input id="email" type="email" name="email" value="{{ old('email') }}" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none placeholder-gray-300 shadow-[4px_4px_0_#000]" required placeholder="ADMIN@CORP.COM">
+                            <input id="email" type="email" name="email" value="{{ old('email') }}" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none placeholder-gray-300 shadow-[4px_4px_0_#000]" required maxlength="255" autocomplete="email" placeholder="ADMIN@CORP.COM">
+                            <p class="mt-2 hidden text-red-600 text-xs font-bold uppercase" data-field-error="email"></p>
                         </div>
                     </div>
                     <div class="grid gap-6 md:grid-cols-2">
                         <div>
                             <label for="business" class="block text-xs font-extrabold uppercase tracking-widest mb-2">Legalitas Bisnis</label>
-                            <input id="business" name="business" value="{{ old('business') }}" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none placeholder-gray-300 shadow-[4px_4px_0_#000]" required placeholder="PT / PERUSAHAAN">
+                            <input id="business" name="business" value="{{ old('business') }}" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none placeholder-gray-300 shadow-[4px_4px_0_#000]" required maxlength="255" autocomplete="organization" placeholder="PT / PERUSAHAAN">
+                            <p class="mt-2 hidden text-red-600 text-xs font-bold uppercase" data-field-error="business"></p>
                         </div>
                         <div>
                             <label for="phone" class="block text-xs font-extrabold uppercase tracking-widest mb-2">Instruksi Telepon</label>
-                            <input id="phone" name="phone" value="{{ old('phone') }}" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none placeholder-gray-300 shadow-[4px_4px_0_#000]" placeholder="+62 8XX">
+                            <input id="phone" name="phone" value="{{ old('phone') }}" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none placeholder-gray-300 shadow-[4px_4px_0_#000]" maxlength="50" autocomplete="tel" placeholder="+62 8XX">
+                            <p class="mt-2 hidden text-red-600 text-xs font-bold uppercase" data-field-error="phone"></p>
                         </div>
                     </div>
                     <div>
@@ -54,12 +59,14 @@
                                 <option value="{{ $budget }}" @selected(old('budget') === $budget)>{{ $budget }}</option>
                             @endforeach
                         </select>
+                        <p class="mt-2 hidden text-red-600 text-xs font-bold uppercase" data-field-error="budget"></p>
                     </div>
                     <div>
                         <label for="message" class="block text-xs font-extrabold uppercase tracking-widest mb-2">Dekomposisi Proyek</label>
-                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none font-bold shadow-[4px_4px_0_#000] placeholder-gray-300" required placeholder="DESKRIPSIKAN STRUKTUR SISTEM...">{{ old('message') }}</textarea>
+                        <textarea id="message" name="message" rows="5" minlength="20" class="w-full px-4 py-3 bg-white border-[3px] border-black focus:ring-0 focus:border-[#0033a0] outline-none transition-colors rounded-none font-bold shadow-[4px_4px_0_#000] placeholder-gray-300" required placeholder="DESKRIPSIKAN STRUKTUR SISTEM...">{{ old('message') }}</textarea>
+                        <p class="mt-2 hidden text-red-600 text-xs font-bold uppercase" data-field-error="message"></p>
                     </div>
-                    <button type="submit" class="w-full bg-black text-white py-5 font-extrabold text-base uppercase tracking-widest hover:theme-bg hover:shadow-[8px_8px_0_#000] hover:-translate-y-1 transition-all border-[4px] border-transparent shadow-[4px_4px_0_#000]">
+                    <button type="submit" data-idle-label="KIRIM REQUEST KONSULTASI" data-loading-label="MENGIRIM..." class="w-full bg-black text-white py-5 font-extrabold text-base uppercase tracking-widest hover:theme-bg hover:shadow-[8px_8px_0_#000] hover:-translate-y-1 transition-all border-[4px] border-transparent shadow-[4px_4px_0_#000] disabled:opacity-70 disabled:cursor-not-allowed">
                         KIRIM REQUEST KONSULTASI
                     </button>
                 </form>

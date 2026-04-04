@@ -14,7 +14,7 @@
                 </p>
             </div>
 
-            <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+            <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3 content-auto">
                 @foreach ($portfolios as $portfolio)
                     <x-ui.portfolio-card :portfolio="$portfolio" />
                 @endforeach

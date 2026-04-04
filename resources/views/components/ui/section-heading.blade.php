@@ -1,6 +1,6 @@
 @props(['eyebrow', 'title', 'highlight' => '', 'description' => '', 'dark' => false])
 
-<div class="mb-10 lg:mb-12" data-aos="fade-up">
+<div class="mb-10 lg:mb-12">
     <span class="inline-block {{ $dark ? 'bg-white text-black' : 'bg-black text-white' }} px-4 py-2 text-xs font-bold uppercase tracking-widest mb-6 shadow-[4px_4px_0_#0033a0]">
         {{ $eyebrow }}
     </span>

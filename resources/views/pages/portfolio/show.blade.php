@@ -10,7 +10,18 @@
                 <p class="text-lg font-semibold leading-relaxed text-gray-700 border-l-[4px] theme-border pl-5">{{ $portfolio->description }}</p>
             </div>
             <div class="relative w-full aspect-[4/3] border-[5px] border-black shadow-[16px_16px_0_#0033a0] overflow-hidden">
-                <img src="{{ $portfolio->image_url }}" alt="{{ $portfolio->title }}" class="absolute inset-0 w-full h-full object-cover">
+                <x-ui.responsive-image
+                    :src="$portfolio->image_url"
+                    :webp="$portfolio->image_webp_url"
+                    :avif="$portfolio->image_avif_url"
+                    :alt="$portfolio->title"
+                    :width="$portfolio->image_width"
+                    :height="$portfolio->image_height"
+                    sizes="(min-width: 1024px) 46vw, 100vw"
+                    loading="eager"
+                    fetchpriority="high"
+                    class="absolute inset-0 w-full h-full object-cover"
+                />
             </div>
         </div>
     </section>

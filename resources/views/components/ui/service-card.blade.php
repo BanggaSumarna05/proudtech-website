@@ -1,6 +1,6 @@
 @props(['service'])
 
-<div data-aos="fade-up" class="bg-white border-[4px] border-black p-8 hover:-translate-y-2 hover:shadow-[12px_12px_0_#0033a0] transition-all duration-300 group cursor-pointer flex flex-col h-full relative overflow-hidden">
+<div class="bg-white border-[4px] border-black p-8 hover:-translate-y-1 hover:shadow-[8px_8px_0_#0033a0] transition-surface transform-gpu group cursor-pointer flex flex-col h-full min-h-[360px] relative overflow-hidden">
     <div class="absolute top-0 right-0 w-12 h-12 bg-gray-100 group-hover:theme-bg transition-colors z-0" style="clip-path: polygon(100% 0, 0 0, 100% 100%);"></div>
     
     <div class="w-16 h-16 theme-bg text-white flex items-center justify-center mb-6 shrink-0 relative z-10 border-2 border-black group-hover:bg-white group-hover:text-[#0033a0] transition-colors">
